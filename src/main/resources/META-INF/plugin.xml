@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>com.intellij.yamlviewer</id>
+    <name>YAML/Properties Viewer</name>
+    <vendor>IntelliJ Plugin</vendor>
+    <description>Interactive beautified viewer for YAML and Properties files</description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Config Viewer" 
+                    anchor="right" 
+                    factoryClass="com.intellij.yamlviewer.ConfigViewerToolWindowFactory"
+                    icon="/icons/viewer.svg"/>
+    </extensions>
+
+    <actions>
+        <action id="com.intellij.yamlviewer.ViewInConfigViewer"
+                class="com.intellij.yamlviewer.ViewInConfigViewerAction"
+                text="View in Config Viewer"
+                description="Open file in interactive config viewer">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
